@@ -1,86 +1,156 @@
 
+/* ========================================
+   1. GLOBAL VARIABLES
+======================================== */
+
 :root {
-	/* Colors */
-	--text: black;
-	--michaeltext:rgb(20, 21, 22);
-	--cadentext:rgb(255, 91, 118);
-	--accent2: #23e5ff;
-	--accent2-dark: #55ffeb;
-	--accent4-dark: #008262;
-	--bg: #F1F1F8;
-	--bg-light: #b0f18d;
-	--buttoncolor: yellow;
-	--buttoncolor-pink: pink;
+    /* Colors */
+    --text: black;
+    --michaeltext: rgb(20, 21, 22);
+    --cadentext: rgb(255, 91, 118);
+    --accent2: #23e5ff;
+    --accent2-dark: #55ffeb;
+    --accent4-dark: #008262;
+    --bg: #F1F1F8;
+    --bg-light: #b0f18d;
+    --buttoncolor: yellow;
+    --buttoncolor-pink: pink;
 
-	/* Margins */
-	--margin-outside: 1rem;
-	--margin-bottom: 3rem;
-	--margin-right: 1.2rem;
-	--margin-left: 0rem;
+    /* Margins */
+    --margin-outside: 1rem;
+    --margin-bottom: 3rem;
+    --margin-right: 1.2rem;
+    --margin-left: 0rem;
 
-	@media screen and (min-width: 850px) {
-		--margin-outside: 1rem;
-		--margin-bottom: 2rem;
-	}
+    /* Maximum Width */
+    --max-width: 80rem;
 
-	/* Max-Width */
-	--max-width: 80rem;
+    @media screen and (min-width: 850px) {
+        --margin-outside: 1rem;
+        --margin-bottom: 2rem;
+    }
 }
 
 
-/* Header */
-
-
-.website_logo {
-	font-family: "Instrument Serif", serif;
-	font-size: 4rem;
-	margin-top: 2rem;
-	text-transform: uppercase;
-	text-align: center;
-	color: var(--text);
-
-
-}
-
-
-
-.website_sub_logo {
-	font-family: "Instrument Sans", sans-serif;
-	font-size: 1rem;
-	text-align: center;
-	color: var(--text);
-}
-
-/* Body */
+/* ========================================
+   2. GENERAL PAGE STYLES
+======================================== */
 
 body {
-	font-family: "Instrument Sans", sans-serif;
-	color: var(--text);
-	background-color: var(--bg);
+    font-family: "Instrument Sans", sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
 }
 
 
-.caden_image {
+/* ========================================
+   3. HEADER & NAVIGATION
+======================================== */
+
+/* Main Header */
+.site-header {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Website Logo */
+.website_logo {
+    font-family: "Instrument Serif", serif;
+    font-size: 4rem;
+    margin-top: 2rem;
+    margin-right: auto;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text);
 	width: 100%;
-	height: 35rem;
-	margin-top: 2rem;
-	margin-bottom:0rem;
+}
+
+/* Website Subtitle */
+.interviews {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text);
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Navigation Links */
+.site-nav__links {
+     display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    right: 1rem;
+    top: 2.8rem;
+
+
+    @media screen and (min-width: 400px) {
+        display: flex;
+    }
+
+
+
+    a {
+        font-size: 1.125rem;
+        text-decoration: none;
+        display: block;
+        border: var(--text) 1px solid;
+        border-radius: .5rem;
+        padding: .5rem;
+        text-align: center;
+    }
+
+    li:first-child a {
+        border-top-left-radius: .5rem;
+        border-bottom-left-radius: .5rem;
+    }
+
+    li:last-child a {
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        border-right-width: 1px;
+    }
+}
+
+
+/* ========================================
+   4. INTERVIEW INTRODUCTION
+======================================== */
+
+/* Main Interview Image */
+.caden_image {
+    width: 100%;
+    height: 35rem;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
 }
 
 .caden_image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
+/* Featured Quote and Credits */
+.caden_header {
+    max-width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: var(--text);
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}
 
-
-
-
-
-/* Caption under image */
-
+/* Article Author */
 .caden_text,
 .caden_subtext {
     max-width: 35rem;
@@ -92,83 +162,70 @@ body {
     font-style: italic;
 }
 
-
-.caden_header {
-    max-width: 45rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: var(--text);
-    font-family: "Instrument Serif", serif;
-    font-style: italic;
-	
-}
-
-.caden_header {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-	padding: 1rem;
-}
-
 .caden_text {
     font-size: 1rem;
     margin-top: 1rem;
     margin-bottom: 0.25rem;
 }
 
+/* Interview Date */
 .caden_subtext {
     font-size: 1rem;
     margin-top: 0;
     margin-bottom: 0.25rem;
 }
 
-/*title*/
 
+/* ========================================
+   5. INTERVIEW TITLE
+======================================== */
+
+/* Title Container */
 .caden_headertwo {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0rem;
-	padding:1rem;
+    padding: 1rem;
+}
+
+/* Main Article Title */
+.Caden_title {
+    font-size: 2rem;
+    font-family: "Instrument Serif", serif;
+
+    @media screen and (min-width: 850px) {
+        font-family: "Instrument Serif", serif;
+        font-size: 5rem;
+        margin-left: 2rem;
+        text-align: left;
+        font-weight: italic;
+        color: var(--text);
+        margin-top: 0;
+    }
+}
+
+/* Interview Subtitle */
+.Caden_maintitle {
+    font-size: 4rem;
+    font-family: "Instrument Serif", serif;
+
+    @media screen and (min-width: 850px) {
+        font-family: "Instrument Serif", serif;
+        font-size: 9rem;
+        margin-bottom: 0.4rem;
+        margin-left: 2rem;
+        text-align: center;
+        font-weight: italic;
+        color: var(--text);
+    }
 }
 
 
-.Caden_title{
-	
-	font-size: 2rem;
-		font-family: "Instrument Serif", italic;
+/* ========================================
+   6. INTERVIEW ARTICLE
+======================================== */
 
-
-	@media screen and (min-width:850px) {
-		font-family: "Instrument Serif", italic;
-	font-size: 5rem;
-	margin-left: 2rem;
-	text-align: left;
-	font-weight: italic;
-	color: var(--text);
-	margin-top: 0;
-		}
-
-}
-
-
-.Caden_maintitle{
-	font-size:4rem;
-	font-family: "Instrument Serif", italic;
-
-
-	@media screen and (min-width:850px) {
-		font-family: "Instrument Serif", italic;
-	font-size: 9rem;
-	margin-bottom: 0.4rem;
-	margin-left: 2rem;
-	text-align: center;
-	font-weight: italic;
-	color: var(--text);
-		}
-}
-
-/*interivew*/
-
+/* Main Article Container */
 .article {
     width: 100%;
     max-width: 70rem;
@@ -176,7 +233,55 @@ body {
     padding: 1rem;
 }
 
-/* for aligned images*/
+/* Individual Interview Sections */
+.article_section h2 {
+    font-family: "Instrument Serif", serif;
+    font-size: 2.5rem;
+    color: var(--text);
+    max-width: 35rem;
+    margin: 0 auto 0.75rem;
+    text-align: left;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+/* Interview Questions and Answers */
+.article_section p {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 18px;
+    color: var(--text);
+    line-height: 1.5rem;
+    text-align: left;
+    max-width: 35rem;
+    margin: 0 auto 1rem;
+    margin-bottom: 1.4rem;
+}
+
+
+/* ========================================
+   7. SPEAKER FORMATTING
+======================================== */
+
+/* Michael's Dialogue */
+.Michael {
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: bold;
+    color: var(--michaeltext);
+}
+
+/* Caden's Dialogue */
+.Caden {
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: bold;
+    color: var(--cadentext);
+}
+
+
+/* ========================================
+   8. INTERVIEW IMAGES & CAPTIONS
+======================================== */
+
+/* Standard Article Image */
 .article_image {
     max-width: 35rem;
     margin: 2rem auto;
@@ -188,7 +293,7 @@ body {
     height: auto;
 }
 
-
+/* Standard Image Caption */
 .image_caption {
     font-family: "Instrument Sans", sans-serif;
     font-size: 0.85rem;
@@ -197,57 +302,16 @@ body {
     margin-top: 0.5rem;
 }
 
-
-/*for header questions*/
-.article_section h2 {
-    font-family: "Instrument Serif", serif;
-    font-size: 2.5rem;
-    color: var(--text);
-    max-width: 35rem;
-    margin: 0 auto 0.75rem;
-    text-align: left;
-	margin-bottom: 1rem;
-	text-decoration: underline;
-}
-
-/*for question answers*/
-.article_section p {
-    font-family: "Instrument Sans", thin;
-    font-size: 1rem;
-    color: var(--text);
-    line-height: 1.5rem;
-    text-align: left;
-    max-width: 35rem;
-    margin: 0 auto 1rem;
-	margin-bottom: 1.4rem;
-}
-
-
-/*michael*/
-.Michael {
-	font-family: "Instrument Sans", bold;
-	font-style: bold;
-	font-weight:bold;
-	color:var(--michaeltext);
-
-	
-}
-
-
-/*caden*/
-.Caden {
-	font-family: "Instrument Sans", bold;
-	font-style: bold;
-	font-weight:bold;
-	color:var(--cadentext);
-
-}
-
-
-/* for Rogue */
+/* Rogue Project Image */
 .article_image_rouge {
     width: 100%;
     max-width: 50rem;
+    margin: 2rem auto;
+}
+
+.article_image_chinese {
+    width: 100%;
+    max-width: 30rem;
     margin: 2rem auto;
 }
 
@@ -257,6 +321,14 @@ body {
     height: auto;
 }
 
+.article_image_chinese img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* Rogue Project Caption */
 .article_image_rouge .image_caption_rouge {
     display: block;
     width: 100%;
@@ -268,25 +340,37 @@ body {
     font-style: italic;
 }
 
-/*cadens desk*/
 
-.cadendesk {
-   
-	max-width:50rem;
-
-
-	@media screen and (min-width:850px) {
-		 display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+.article_image_chinese .image_caption_chinese {
+    display: block;
     width: 100%;
-    max-width: 65rem;
-    margin: 2rem auto;
-		}
+    max-width: none;
+    margin: 0.5rem 0 0;
+    text-align: center;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.85rem;
+    font-style: italic;
 }
 
+/* ========================================
+   9. CADEN'S DESK PHOTOGRAPHS
+======================================== */
 
+/* Desk Image Container */
+.cadendesk {
+    max-width: 50rem;
 
+    @media screen and (min-width: 850px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 100%;
+        max-width: 65rem;
+        margin: 2rem auto;
+    }
+}
+
+/* Individual Desk Images */
 .cadens_deskside {
     width: 100%;
 }
@@ -297,41 +381,44 @@ body {
     height: auto;
 }
 
+/* Desk Image Captions */
 .desk_caption {
-text-align:center;
-margin-bottom:0.4rem;
-margin-top:0.4rem;
-font-size:0.85rem;
-
-
-	@media screen and (min-width:850px) {
-		  width: 100%;
-    max-width: none;
-    margin: 0.5rem 0 0;
-    font-family: "Instrument Sans", sans-serif;
-    font-size: 0.85rem;
-    font-style: italic;
     text-align: center;
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
 
-		}
-
-	
+    @media screen and (min-width: 850px) {
+        width: 100%;
+        max-width: none;
+        margin: 0.5rem 0 0;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 0.85rem;
+        font-style: italic;
+        text-align: center;
+    }
 }
 
-/*cadenlast image*/
 
+/* ========================================
+   10. FINAL ARTICLE IMAGE
+======================================== */
+
+/* Final Image Container */
 .caden_lastimage {
     width: 100%;
     max-width: 35rem;
     margin: 2rem auto;
 }
 
+/* Image Crop */
 .lastimage_crop {
     width: 100%;
     height: 30rem;
     overflow: hidden;
 }
 
+/* Final Image */
 .lastimage_crop img {
     width: 100%;
     height: 100%;
@@ -339,6 +426,7 @@ font-size:0.85rem;
     display: block;
 }
 
+/* Final Image Caption */
 .caden_lastimage .cadenimage_caption {
     width: 100%;
     max-width: none;
@@ -349,22 +437,30 @@ font-size:0.85rem;
     text-align: justify;
 }
 
-/* dark mode */
+
+/* ========================================
+   11. DARK MODE
+======================================== */
+
+/* Hide Checkbox */
 #darkmode {
     display: none;
 }
 
+/* Theme Toggle Icon */
 .theme-icon {
     cursor: pointer;
     font-size: 1.5rem;
+	
+
 }
 
-
+/* Sun and Moon Icons */
 .sun {
     display: none;
 }
 
-
+/* Switch Moon to Sun */
 #darkmode:checked + .theme-icon .moon {
     display: none;
 }
@@ -373,6 +469,7 @@ font-size:0.85rem;
     display: inline;
 }
 
+/* Dark Mode Colors */
 body:has(#darkmode:checked) {
     --bg: #141516;
     --text: #F1F1F8;
@@ -380,4 +477,136 @@ body:has(#darkmode:checked) {
     --cadentext: #ff5b76;
     --accent2: #55ffeb;
     --buttoncolor: #55ffeb;
+}
+
+@media screen and (max-width: 600px) {
+
+    .website_logo {
+        font-size: 3rem;
+    }
+
+    .website {
+        font-size: 0.75rem;
+    }
+
+    .site-nav__links {
+        position: static;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+	.site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.theme-icon {
+    margin-top: 0rem;
+}
+}
+
+
+
+
+/* INTERVIEW GRID */
+
+/* HOMEPAGE */
+
+.home-intro {
+    max-width: 55rem;
+    margin: 5rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.home-intro h1 {
+    font-family: "Instrument Serif", serif;
+    font-size: 4rem;
+
+	
+}
+
+.home-intro p {
+    max-width: 35rem;
+    margin: 1rem auto;
+    line-height: 1.5;
+}
+
+/* INTERVIEW GRID */
+
+.interview-list {
+    padding: 1rem;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.interview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.interview-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+	margin-bottom: 0.5rem;
+}
+
+.interview-card a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.interview-card h3 {
+    font-family: "Instrument Serif", serif;
+    font-size: 1.8rem;
+    margin-top: 0.75rem;
+}
+
+.interview-card p {
+    margin-top: 0.5rem;
+	margin-bottom:5rem;
+}
+
+
+.card-images {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.card-images img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.6s ease;
+}
+
+.card-images img:nth-child(2) {
+    opacity: 0;
+}
+
+.interview-card:hover .card-images img:nth-child(2) {
+    opacity: 1;
+}
+
+
+/* MOBILE */
+
+
+@media screen and (max-width: 600px) {
+
+    .interview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-intro h1 {
+        font-size: 2.5rem;
+    }
+
 }
